@@ -12,12 +12,13 @@
         }
     ],
     "require": {
-        "spirit-dev/ci-hub-core-bundle": "0.*@dev"
+        "spirit-dev/ci-hub-core-bundle": "dev"
     },
     "autoload": {
         "psr-0": { "SpiritDev\\Bundle\\CIHubPostBundle": "" }
     },
     "target-dir": "SpiritDev/Bundle/CIHubPostBundle",
+    "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
             "dev-master": "0.x-dev"
