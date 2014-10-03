@@ -1,1 +1,118 @@
-Hello {{ name }}!
+{% extends '@SpiritDevCIHubCore/layout.html.twig' %}
+
+{% block title %}{{ parent() }} - Post-CI{% endblock %}
+
+
+{% block perso_css %}
+    {% if app.environment == "prod" %}
+        {# TODO Définir le contenu en prod #}
+    {% else %}
+        {% stylesheets
+        'bundles/cihubpost/css/common/post-ci-ui.css'
+        filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+    {% endif %}
+{% endblock %}
+
+{% block perso_js %}
+    {% if app.environment == "prod" %}
+        {# TODO Définir le contenu en prod #}
+    {% else %}
+        {% javascripts
+        'bundles/cihubpost/js/common/objects/ui/post-project.js'
+        'bundles/cihubpost/js/common/post-ci-ui.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endif %}
+
+{% endblock %}
+
+{% block cihub_sidebar %}
+    <ul class="nav nav-sidebar">
+        <li><a href="#">Overview</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Analytics</a></li>
+        <li><a href="#">Export</a></li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Dropdown <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Export</a></li>
+            </ul>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block cihub_content %}
+
+    <div class="row">
+        <h1 class="page-header">Post - CI</h1>
+    </div>
+
+    <div class="row">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Projects</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav nav-tabs nav-justified" role="tablist">
+                        {% for project in projects %}
+                            <li><a class="postci-project" id="{{ project.id }}" href="#">{{ project.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="row">
+
+        <div class="post-project-manipulator" style="display: none">
+            <div class="row">
+                <div class="post-project-header">
+                    <div class="post-project-header-title">
+                        title
+                    </div>
+                    <div class="post-project-header-date-start">
+                        date start
+                    </div>
+                    <div class="post-project-header-description">
+                        description
+                    </div>
+                    <div class="post-project-header-leader">
+                        leader
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="post-project-content">CONTENT</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        var PROJECTS = new Array();
+        {% for project in projects %}
+        PROJECTS[{{ project.id }}] = {
+            'id': {{ project.id }},
+            'name': "{{ project.name }}",
+            'description': "{{ project.description }}",
+            'dateCreation': "{{ project.dateCreation|date("Y-m-d") }}",
+            'leader': "{{ project.leader }}"
+        };
+        {% endfor %}
+    </script>
+{% endblock %}

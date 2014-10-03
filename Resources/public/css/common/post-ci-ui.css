@@ -1,0 +1,40 @@
+/* Project Global */
+.post-project-manipulator {
+    margin-left: 20px;
+}
+
+/* Project Header */
+.post-project-header {
+    display: block;
+    border-bottom: 1px outset;
+}
+
+.post-project-header-title {
+    /*padding: 5px;*/
+    /*font-size: 24px;*/
+    color: #5a5a5a;
+    display: inline-block;
+    max-width: 70%;
+}
+
+.post-project-header-date-start {
+    display: inline-block;
+    float: right;
+    margin-top: 17px;
+    margin-right: 30%;
+}
+
+.post-project-header-description {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+.post-project-header-leader {
+
+}
+
+/* Project Content */
+.post-project-content {
+
+}
