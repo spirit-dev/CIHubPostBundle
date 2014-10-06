@@ -2,7 +2,13 @@
     "name": "spirit-dev/ci-hub-post-bundle",
     "type": "symfony-bundle",
     "description": "Symfony2 component suite, arrounding CI tools",
-    "keywords": ["Spirit-Dev", "CI", "Continuous", "Integration", "Jenkins"],
+    "keywords": [
+        "Spirit-Dev",
+        "CI",
+        "Continuous",
+        "Integration",
+        "Jenkins"
+    ],
     "license": "GPL-v2",
     "authors": [
         {
@@ -15,7 +21,7 @@
         "spirit-dev/ci-hub-core-bundle": "0.x-dev"
     },
     "autoload": {
-        "psr-0": { "SpiritDev\\Bundle\\CIHubPostBundle": "" }
+        "psr-0": {"SpiritDev\\Bundle\\CIHubPostBundle": ""}
     },
     "target-dir": "SpiritDev/Bundle/CIHubPostBundle",
     "minimum-stability": "dev",

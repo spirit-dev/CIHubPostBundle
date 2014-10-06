@@ -14,7 +14,15 @@ $(document).ready(function () {
 function projectWatch() {
     // Click définition
     $('.postci-project').click(function () {
+        removeAllActives();
+        $(this).parent().addClass('active');
         loadProjectDatas(this.id);
+    });
+}
+
+function removeAllActives() {
+    $('.postci-project').each(function () {
+        $(this).parent().removeClass('active');
     });
 }
 

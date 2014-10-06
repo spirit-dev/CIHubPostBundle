@@ -5,7 +5,7 @@
 
 /* Project Header */
 .post-project-header {
-    display: block;
+    /*display: block;*/
     border-bottom: 1px outset;
 }
 
@@ -13,15 +13,21 @@
     /*padding: 5px;*/
     /*font-size: 24px;*/
     color: #5a5a5a;
-    display: inline-block;
-    max-width: 70%;
+    /*display: inline-block;*/
+    /*max-width: 70%;*/
 }
 
 .post-project-header-date-start {
-    display: inline-block;
-    float: right;
-    margin-top: 17px;
-    margin-right: 30%;
+    /*display: inline-block;*/
+    /*float: right;*/
+    margin-top: 20px;
+    /*margin-right: 30%;*/
+}
+
+.post-project-header-date-start h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    line-height: 1.1;
 }
 
 .post-project-header-description {
@@ -36,5 +42,5 @@
 
 /* Project Content */
 .post-project-content {
-
+    margin-top: 15px;
 }

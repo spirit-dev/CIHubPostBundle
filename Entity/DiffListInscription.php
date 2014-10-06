@@ -42,11 +42,10 @@ class DiffListInscription
     private $mailList;
 
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {

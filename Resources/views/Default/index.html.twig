@@ -8,7 +8,7 @@
         {# TODO Définir le contenu en prod #}
     {% else %}
         {% stylesheets
-        'bundles/cihubpost/css/common/post-ci-ui.css'
+        'bundles/spiritdevcihubpost/css/common/post-ci-ui.css'
         filter='cssrewrite' %}
         <link rel="stylesheet" href="{{ asset_url }}"/>
         {% endstylesheets %}
@@ -20,8 +20,8 @@
         {# TODO Définir le contenu en prod #}
     {% else %}
         {% javascripts
-        'bundles/cihubpost/js/common/objects/ui/post-project.js'
-        'bundles/cihubpost/js/common/post-ci-ui.js' %}
+        'bundles/spiritdevcihubpost/js/common/objects/ui/post-project.js'
+        'bundles/spiritdevcihubpost/js/common/post-ci-ui.js' %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
     {% endif %}
@@ -77,30 +77,46 @@
         </nav>
     </div>
 
-    <div class="row">
-
-        <div class="post-project-manipulator" style="display: none">
+    <div class="post-project-manipulator" style="display: none">
+        <div class="row">
             <div class="row">
-                <div class="post-project-header">
+                <div class="col-md-6">
                     <div class="post-project-header-title">
                         title
                     </div>
+                </div>
+                <div class="col-md-6">
                     <div class="post-project-header-date-start">
                         date start
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
                     <div class="post-project-header-description">
                         description
                     </div>
+                </div>
+                <div class="col-md-6">
                     <div class="post-project-header-leader">
                         leader
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="post-project-content">CONTENT</div>
+            <div class="post-project-header">
             </div>
         </div>
-
+        <div class="row">
+            <div class="post-project-content">
+                <div class="post-project-content-toolbar">
+                    Toolbar
+                    <button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span>  New Diffusion list</button>
+                </div>
+                <div class="post-project-content-content">
+                    Content
+                </div>
+            </div>
+        </div>
     </div>
 
     <script type="text/javascript">

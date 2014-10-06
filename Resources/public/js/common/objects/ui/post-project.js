@@ -9,27 +9,34 @@ function PostProjectManipulator() {
     this.projectContent = $('.post-project-content');
 
     this.shown = false;
+    this.currentProjectId = null;
 
     this.init = function () {
     };
 
     this.loadProject = function (projectArray) {
 
+        mainLoader.init();
+
         console.log(projectArray);
+
+        this.currentProjectId = projectArray.id;
 
         this.unshowContent();
 
         this.projectHeaderTitle.html('<h3>' + projectArray.name + '</h3>');
         this.projectHeaderDescription.html(projectArray.description);
-        this.projectHeaderDateStart.html('<h4>Project lauched: <span class="label label-primary">' + projectArray.dateCreation + '</span></h4>');
+        this.projectHeaderDateStart.html('<h4>Project lauched : <span class="label label-primary">' + projectArray.dateCreation + '</span></h4>');
         if (projectArray.leader.length) {
-            this.projectHeaderLeader.html(projectArray.leader);
+            this.projectHeaderLeader.html('<h4>Project Leader : <span class="label label-primary">' + projectArray.leader + '</span></h4>');
         }
         else {
             this.projectHeaderLeader.html("");
         }
 
         this.showContent();
+
+        mainLoader.remove();
     };
 
     this.showContent = function () {
@@ -45,6 +52,10 @@ function PostProjectManipulator() {
             this.shown = false;
         }
     };
+
+    this.getCurrentProjectId = function() {
+        return this.currentProjectId;
+    }
 
     this.init();
 }

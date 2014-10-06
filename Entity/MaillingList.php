@@ -54,11 +54,10 @@ class MaillingList
     private $user;
 
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -81,7 +80,7 @@ class MaillingList
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -104,7 +103,7 @@ class MaillingList
     /**
      * Get surname
      *
-     * @return string 
+     * @return string
      */
     public function getSurname()
     {
@@ -127,7 +126,7 @@ class MaillingList
     /**
      * Get mail
      *
-     * @return string 
+     * @return string
      */
     public function getMail()
     {
