@@ -6,7 +6,20 @@ var projectManipulator = new PostProjectManipulator();
  */
 $(document).ready(function () {
     projectWatch();
+    buttonsBinding();
+    //newDiffListFormAction();
 });
+
+function newDiffListFormAction() {
+    var diffListName = $("#difflistname").val();
+    var project = projectManipulator.getCurrentProject();
+    console.log('Gonna create a new DiffList named : ' + diffListName + ' for project : ' + project.id + ' - ' + project.name);
+
+}
+
+function buttonsBinding() {
+    $('#newDiffList').popover();
+}
 
 /**
  * Function called to define action on each available project
@@ -20,6 +33,9 @@ function projectWatch() {
     });
 }
 
+/**
+ * Function removing all "active" rendering
+ */
 function removeAllActives() {
     $('.postci-project').each(function () {
         $(this).parent().removeClass('active');

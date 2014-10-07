@@ -10,8 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="cihub_post_diff_list")
  * @ORM\Entity
  */
-class DiffList
-{
+class DiffList {
     /**
      * @var integer
      *
@@ -58,8 +57,7 @@ class DiffList
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -69,8 +67,7 @@ class DiffList
      * @param string $name
      * @return DiffList
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -81,8 +78,7 @@ class DiffList
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -92,8 +88,7 @@ class DiffList
      * @param string $description
      * @return DiffList
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
 
         return $this;
@@ -104,8 +99,7 @@ class DiffList
      *
      * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -115,8 +109,7 @@ class DiffList
      * @param \DateTime $dateCreation
      * @return DiffList
      */
-    public function setDateCreation($dateCreation)
-    {
+    public function setDateCreation($dateCreation) {
         $this->dateCreation = $dateCreation;
 
         return $this;
@@ -127,8 +120,7 @@ class DiffList
      *
      * @return \DateTime
      */
-    public function getDateCreation()
-    {
+    public function getDateCreation() {
         return $this->dateCreation;
     }
 
@@ -138,8 +130,7 @@ class DiffList
      * @param \CIHub\CoreBundle\Entity\Project $project
      * @return DiffList
      */
-    public function setProject(\CIHub\CoreBundle\Entity\Project $project = null)
-    {
+    public function setProject(\CIHub\CoreBundle\Entity\Project $project = null) {
         $this->project = $project;
 
         return $this;
@@ -150,8 +141,7 @@ class DiffList
      *
      * @return \CIHub\CoreBundle\Entity\Project
      */
-    public function getProject()
-    {
+    public function getProject() {
         return $this->project;
     }
 }

@@ -110,7 +110,19 @@
             <div class="post-project-content">
                 <div class="post-project-content-toolbar">
                     Toolbar
-                    <button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span>  New Diffusion list</button>
+
+                    <button id="newDiffList" type="button" class="btn btn-primary" data-container="body"
+                            data-toggle="popover"
+                            data-placement="bottom" data-html="true"
+                            data-content='
+                            <form id="newDiffListForm" action="javascript:newDiffListFormAction();">
+                                <label for="difflistname">Diffusion list name</label>
+                                <input class="form-control" type="text" id="difflistname" required="required"/>
+                                <input class="btn btn-primary btn-block" type="submit" value="Submit" style="margin-top: 8px;"/>
+                            </form>'>
+                        <span class="glyphicon glyphicon-pencil"></span> New Diffusion list
+                    </button>
+
                 </div>
                 <div class="post-project-content-content">
                     Content

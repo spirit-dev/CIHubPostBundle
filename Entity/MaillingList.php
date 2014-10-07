@@ -11,8 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="cihub_post_mailling_list")
  * @ORM\Entity
  */
-class MaillingList
-{
+class MaillingList {
     /**
      * @var integer
      *
@@ -59,8 +58,7 @@ class MaillingList
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -70,8 +68,7 @@ class MaillingList
      * @param string $name
      * @return MaillingList
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -82,8 +79,7 @@ class MaillingList
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -93,8 +89,7 @@ class MaillingList
      * @param string $surname
      * @return MaillingList
      */
-    public function setSurname($surname)
-    {
+    public function setSurname($surname) {
         $this->surname = $surname;
 
         return $this;
@@ -105,8 +100,7 @@ class MaillingList
      *
      * @return string
      */
-    public function getSurname()
-    {
+    public function getSurname() {
         return $this->surname;
     }
 
@@ -116,8 +110,7 @@ class MaillingList
      * @param string $mail
      * @return MaillingList
      */
-    public function setMail($mail)
-    {
+    public function setMail($mail) {
         $this->mail = $mail;
 
         return $this;
@@ -128,8 +121,7 @@ class MaillingList
      *
      * @return string
      */
-    public function getMail()
-    {
+    public function getMail() {
         return $this->mail;
     }
 
@@ -139,8 +131,7 @@ class MaillingList
      * @param User $user
      * @return MaillingList
      */
-    public function setUser(\CIHub\UserBundle\Entity\User $user = null)
-    {
+    public function setUser(\CIHub\UserBundle\Entity\User $user = null) {
         $this->user = $user;
 
         return $this;
@@ -151,8 +142,7 @@ class MaillingList
      *
      * @return \CIHub\UserBundle\Entity\User
      */
-    public function getUser()
-    {
+    public function getUser() {
         return $this->user;
     }
 }

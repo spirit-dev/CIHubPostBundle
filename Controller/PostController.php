@@ -3,11 +3,14 @@
 namespace SpiritDev\Bundle\CIHubPostBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class PostController extends Controller
-{
-    public function indexAction()
-    {
+class PostController extends Controller {
+
+    /**
+     * @Route("/index")
+     */
+    public function indexAction() {
         $em = $this->getDoctrine()->getManager();
 
         $projects = $em->getRepository('SpiritDevCIHubCoreBundle:Project')->findAll();

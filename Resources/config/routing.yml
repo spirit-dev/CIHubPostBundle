@@ -1,3 +1,8 @@
-spirit_dev_ci_hub_post_homepage:
-    path:     /index
-    defaults: { _controller: SpiritDevCIHubPostBundle:Post:index }
+spirit_dev_ci_hub_post:
+    resource: "@SpiritDevCIHubPostBundle/Controller/PostController.php"
+    type:     annotation
+
+spirit_dev_ci_hub_post_difflist:
+    resource: "@SpiritDevCIHubPostBundle/Controller/DiffListController.php"
+    prefix:   /difflist
+    type:     annotation

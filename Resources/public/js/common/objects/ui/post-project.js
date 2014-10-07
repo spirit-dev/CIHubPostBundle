@@ -9,7 +9,7 @@ function PostProjectManipulator() {
     this.projectContent = $('.post-project-content');
 
     this.shown = false;
-    this.currentProjectId = null;
+    this.currentProject = null;
 
     this.init = function () {
     };
@@ -18,9 +18,7 @@ function PostProjectManipulator() {
 
         mainLoader.init();
 
-        console.log(projectArray);
-
-        this.currentProjectId = projectArray.id;
+        this.currentProject = projectArray;
 
         this.unshowContent();
 
@@ -53,8 +51,8 @@ function PostProjectManipulator() {
         }
     };
 
-    this.getCurrentProjectId = function() {
-        return this.currentProjectId;
+    this.getCurrentProject = function () {
+        return this.currentProject;
     }
 
     this.init();
