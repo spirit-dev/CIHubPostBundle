@@ -7,14 +7,24 @@ var projectManipulator = new PostProjectManipulator();
 $(document).ready(function () {
     projectWatch();
     buttonsBinding();
-    //newDiffListFormAction();
 });
 
+/**
+ * Standalone function sends newDiffList Request
+ */
 function newDiffListFormAction() {
     var diffListName = $("#difflistname").val();
     var project = projectManipulator.getCurrentProject();
     console.log('Gonna create a new DiffList named : ' + diffListName + ' for project : ' + project.id + ' - ' + project.name);
 
+    var req = new requestManager({
+        url: ROUTES.post.difflist,
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            'diffListName': diffListName
+        }
+    });
 }
 
 function buttonsBinding() {
