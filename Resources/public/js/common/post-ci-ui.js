@@ -17,14 +17,23 @@ function newDiffListFormAction() {
     var project = projectManipulator.getCurrentProject();
     console.log('Gonna create a new DiffList named : ' + diffListName + ' for project : ' + project.id + ' - ' + project.name);
 
+    function newDiffListDone() {
+        console.log('post ci done');
+    };
+    function newDiffListFail() {
+        console.log('post ci fail');
+    };
+
     var req = new requestManager({
-        url: ROUTES.post.difflist,
-        type: 'POST',
-        dataType: 'json',
-        data: {
-            'diffListName': diffListName
-        }
-    });
+            url: ROUTES.post.difflist.new,
+            type: 'POST',
+            dataType: 'json',
+            async: false,
+            data: {
+                'diffListName': diffListName
+            }
+        }, newDiffListDone, newDiffListFail);
+    console.log(req.getResult());
 }
 
 function buttonsBinding() {
