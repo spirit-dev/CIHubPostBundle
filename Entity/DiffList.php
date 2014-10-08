@@ -44,13 +44,16 @@ class DiffList {
     /**
      * @var \CIHub\CoreBundle\Entity\Project
      *
-     * @ORM\ManyToOne(targetEntity="CIHub\CoreBundle\Entity\Project")
+     * @ORM\ManyToOne(targetEntity="SpiritDev\Bundle\CIHubPostBundle\Project")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="project_id", referencedColumnName="id")
      * })
      */
     private $project;
 
+    public function __construct() {
+        $this->dateCreation = new \DateTime();
+    }
 
     /**
      * Get id
@@ -127,10 +130,10 @@ class DiffList {
     /**
      * Set project
      *
-     * @param \CIHub\CoreBundle\Entity\Project $project
+     * @param \SpiritDev\Bundle\CIHubCoreBundle\Entity\Project $project
      * @return DiffList
      */
-    public function setProject(\CIHub\CoreBundle\Entity\Project $project = null) {
+    public function setProject(\SpiritDev\Bundle\CIHubCoreBundle\Entity\Project $project = null) {
         $this->project = $project;
 
         return $this;
@@ -139,7 +142,7 @@ class DiffList {
     /**
      * Get project
      *
-     * @return \CIHub\CoreBundle\Entity\Project
+     * @return \SpiritDevCIHub\CoreBundle\Entity\Project
      */
     public function getProject() {
         return $this->project;

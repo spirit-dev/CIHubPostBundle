@@ -27,10 +27,12 @@ function newDiffListFormAction() {
     var req = new requestManager({
             url: ROUTES.post.difflist.new,
             type: 'POST',
-            dataType: 'json',
+            dataType: 'application/json',
             async: false,
             data: {
-                'diffListName': diffListName
+                name: diffListName,
+                description: "test",
+                project: project.id
             }
         }, newDiffListDone, newDiffListFail);
     console.log(req.getResult());
